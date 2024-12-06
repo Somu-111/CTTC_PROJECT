@@ -9,6 +9,7 @@ public class EAttendanceApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EAttendanceApiApplication.class, args);
 		System.out.println("Hi");
+		System.out.println("I am Somanath..");
 	}
 
 }
