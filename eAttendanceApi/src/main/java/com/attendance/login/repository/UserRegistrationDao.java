@@ -1,5 +1,9 @@
 package com.attendance.login.repository;
 
-public interface UserRegistrationDao {
+import org.springframework.data.repository.CrudRepository;
+
+import com.attendance.entity.login.UserRegistration;
+
+public interface UserRegistrationDao extends CrudRepository<UserRegistration, Long>{
 
 }
