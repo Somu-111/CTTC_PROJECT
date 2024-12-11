@@ -18,7 +18,7 @@ public class UserRegistration {
 @GeneratedValue(strategy = GenerationType.IDENTITY) 
 private Long regdId; 
 private String userId; 
-private String firstname; 
+private String firstName; 
 private String lastName; 
 private String mail; 
 private String mobile; 
