@@ -1,5 +1,6 @@
 package com.attendance.entity.login;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Embeddable; 

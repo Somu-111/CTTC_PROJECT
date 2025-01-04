@@ -21,7 +21,7 @@ public class UserLoginServiceImpl implements UserLoginService{
 		data.setCreatedDate(LocalDateTime.now());
 		data.setModifiedDate(LocalDateTime.now());
 		data.setCreatedUser("Admin");
-		data.setModifiedUser(userLogin.getUserId());
+		data.setModifiedUser(userLogin.getUserId()+"");
 		userLogin.setUserInfo(data);
 		return userLoginDao.save(userLogin);
 	}

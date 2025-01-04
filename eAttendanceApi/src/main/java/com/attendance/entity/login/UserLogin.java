@@ -10,10 +10,9 @@ import lombok.Data;
 @Table(name = "USER_LOGIN") 
 public class UserLogin { 
 @Id 
-private Long loginId; 
-private String userId; 
-private String password; 
-private Integer isPasswordAuto; 
+private Long userId;
+private String mail;  
+private String password;  
 private Integer status; 
 private String role; 
 private String privilege; 

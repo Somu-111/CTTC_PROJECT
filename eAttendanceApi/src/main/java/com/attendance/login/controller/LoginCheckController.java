@@ -8,21 +8,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.attendance.entity.login.UserLogin;
-import com.attendance.login.service.UserLoginService;
+import com.attendance.entity.login.LoginUser;
+import com.attendance.login.service.LoginCheckService;
+
+import jakarta.transaction.Transactional;
 
 @CrossOrigin(origins = "http://localhost:4200")
 
+@Transactional
 @RestController
-public class UserLoginController {
-
-	@Autowired
-    private UserLoginService userLoginService;
-
-    @PostMapping("/userlogin")
-    public ResponseEntity<UserLogin> createUserLogin(@RequestBody UserLogin userLogin) {
-        UserLogin savedUserLogin = userLoginService.saveUserLogin(userLogin);
-        return new ResponseEntity<UserLogin>(savedUserLogin,HttpStatus.CREATED);
-    }
+public class LoginCheckController {
 	
+	@Autowired
+	LoginCheckService loginCheckService;
+	
+	  @PostMapping("/checkUser")
+	  public LoginUser CheckUser(@RequestBody LoginUser loginUser) {
+		  LoginUser user=loginCheckService.CheckUser(loginUser);
+	        return user;
+	    }
+
 }

@@ -15,13 +15,16 @@ public class UserRegistrationServiceImpl implements UserRegistrationService {
 	@Autowired
 	UserRegistrationDao userRegistrationDao;
 	
+	
+	
 	@Override
 	public UserRegistration saveUserRegistration(UserRegistration userRegistration) {
 		UserInfo data=new UserInfo();
 		data.setCreatedDate(LocalDateTime.now());
 		data.setModifiedDate(LocalDateTime.now());
 		data.setCreatedUser("Admin");
-		data.setModifiedUser(userRegistration.getUserId());
+		userRegistration.setUserId(userRegistration.getFirstName()+userRegistration.getRegdId());
+		data.setModifiedUser(userRegistration.getRegdId()+"");
 		userRegistration.setUserInfo(data);
 		return userRegistrationDao.save(userRegistration);
 	}
